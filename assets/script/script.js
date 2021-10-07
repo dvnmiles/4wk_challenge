@@ -10,7 +10,7 @@ const option_list = document.querySelector(".option_list");
 var time_line = document.querySelector("header .time_line");
 var timeText = document.querySelector(".timer .time_left_txt");
 var timeCount = document.querySelector(".timer .timer_sec");
-
+var timeResume = document.querySelector(".timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = () => {
@@ -54,10 +54,10 @@ restart_quiz.onclick = () => {
     queCounter(que_numb); //passing que_numb value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    startTimer(); //calling startTimer function
+    startTimer(timeValue); //calling startTimer function
     //startTimerLine(widthValue); //calling startTimerLine function
-    //timeText.textContent = "Time Left"; //change the text of timeText to Time Left
-    //next_btn.classList.remove("show"); //hide the next button
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
 }
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {
@@ -66,19 +66,20 @@ quit_quiz.onclick = () => {
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
-// if ANSWER QUESTION button clicked
+// if SUMBIT QUESTION button clicked
 next_btn.onclick = () => {
     if (que_count < questions.length - 1) { //if question count is less than total question length
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
         queCounter(que_numb); //passing que_numb value to queCounter
-        //clearInterval(counter); //clear counter
+        clearInterval(counter); //clear counter
+        resumeTimer(); //caling resumeTimer function
         //keepTimer(timeValue); //calling keepTimer function
-        //startTimer(timeValue); //calling startTimer function
+        //startTimer(); //calling startTimer function
         //timePenalty(timeValue); //calling timePenalty function
-        //timeText.textContent = "Time Left"; //change the timeText to Time Left
-        //next_btn.classList.remove("show"); //hide the next button
+        timeText.textContent = "Time Left"; //change the timeText to Time Left
+        next_btn.classList.remove("show"); //hide the next button
     } else {
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
@@ -123,7 +124,11 @@ function optionSelected(answer) {
         console.log("Your correct answers = " + userScore);
         clearInterval(counter); //clear counter
         keepTimer(timeValue); //calling keepTimer function     
-    } else {
+    } 
+    
+    
+    
+    else {
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Wrong Answer");
@@ -178,7 +183,7 @@ function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
         timeCount.textContent = time; //changing the value of timeCount with time value
-        time--; //decrement the time value
+       time--; //decrement the time value
 
         if (time < 9) { //if timer is less than 9
             let addZero = timeCount.textContent;
@@ -208,9 +213,6 @@ function startTimer(time) {
 }
 
 
-function resumeTimer(){
-
-}
 
 
 
@@ -218,6 +220,20 @@ function resumeTimer(){
 
 function keepTimer() {
 }
+
+
+function resumeTimer(){
+    counter = setInterval(timer, 1000);
+    function timer() {
+    timeCount.textContent = timeCount.textContent; //changing the value of timeCount with time value
+    timeCount.textContent--; //decrement the time value
+}
+}
+
+
+
+
+
 
 
 function timePenalty() {
