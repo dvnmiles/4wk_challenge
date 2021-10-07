@@ -75,9 +75,6 @@ next_btn.onclick = () => {
         queCounter(que_numb); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
         resumeTimer(); //caling resumeTimer function
-        //keepTimer(timeValue); //calling keepTimer function
-        //startTimer(); //calling startTimer function
-        //timePenalty(timeValue); //calling timePenalty function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     } else {
@@ -125,21 +122,13 @@ function optionSelected(answer) {
         clearInterval(counter); //clear counter
         keepTimer(timeValue); //calling keepTimer function     
     } 
-    
-    
-    
     else {
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Wrong Answer");
-        console.log();
         clearInterval(counter); //clear counter
-        keepTimer(timeValue); //calling keepTimer function
-
-        timePenalty(timeValue); //calling timePenalty function
-        
-        startTimer();
-        
+        timePenalty(); //calling timePenalty function
+        keepTimer(); //calling keepTimer function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
 
