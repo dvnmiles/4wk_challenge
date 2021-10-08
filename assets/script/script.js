@@ -128,7 +128,10 @@ function optionSelected(answer) {
         console.log("Wrong Answer");
         clearInterval(counter); //clear counter
         timePenalty(); //calling timePenalty function
-        keepTimer(); //calling keepTimer function
+        //keepTimer(timeValue); //calling keepTimer function
+        
+    
+        
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
 
@@ -178,12 +181,13 @@ function startTimer(time) {
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero; //add a 0 before time value
         }
-        if (time <= 0) { //if timer is less than 0
+        if (time < 0) { //if timer is less than 0
 
             // if time runs out add function to end quiz NEED to update change code below Devin Miles //
 
             clearInterval(counter); //clear counter
             timeText.textContent = "You ran out of time."; //change the time text to time off
+            let timeValue = 0;
             const allOptions = option_list.children.length; //getting all option items
             let correcAns = questions[que_count].answer; //getting correct answer from array
             for (i = 0; i < allOptions; i++) {
@@ -208,30 +212,23 @@ function startTimer(time) {
 // Timer function when answer question button clicked
 
 function keepTimer() {
+    
 }
 
 
 function resumeTimer(){
     counter = setInterval(timer, 1000);
-    function timer() {
-    timeCount.textContent = timeCount.textContent; //changing the value of timeCount with time value
+    
+    function timer() {timeCount.textContent = timeCount.textContent; //changing the value of timeCount with time value
     timeCount.textContent--; //decrement the time value
+    }  
 }
-}
-
-
-
-
-
-
 
 function timePenalty() {
-  counter = setInterval(timer, 1000);
-  function timer() {
-      timeCount.textContent = timeCount.textContent - 20; //changing the value of timeCount with time value
+    timeCount.textContent = timeCount.textContent - 20; //changing the value of timeCount with time value
       timeCount.textContent--; //decrement the time value
-
-      if (timeCount.textContent <= 0) { //if timer is less than 0
+    
+      if (timeCount.textContent < 0) { //if timer is less than 0
 
           // if time runs out add function to end quiz NEED to update change code below Devin Miles //
 
@@ -252,7 +249,6 @@ function timePenalty() {
           next_btn.classList.add("show"); //show the next button if user selected any option
       }
   }
-}
 
 function Line(time) {
     counterLine = setInterval(timer, 100);
