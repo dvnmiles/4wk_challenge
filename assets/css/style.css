@@ -319,6 +319,17 @@ footer button.show{
     border: 1px solid #007bff;
     transition: all 0.3s ease;
 }
+
+.buttons button.save {
+    color: #fff;
+    background: #007bff;
+}
+
+.buttons button.save:hover {
+    color: #007bff;
+    background: #fff;
+}
+
 .buttons button.restart{
     color: #fff;
     background: #007bff;
