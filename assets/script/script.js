@@ -6,7 +6,7 @@ const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
-const save_score = result_box.querySelector(".buttons .save");
+const save_btn = info_box.querySelector(".buttons .save");
 
 var time_line = document.querySelector("header .time_line");
 var timeText = document.querySelector(".timer .time_left_txt");
@@ -41,16 +41,14 @@ let counterLine;
 let widthValue = 0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
+const save_quiz = result_box.querySelector(".buttons .save");
 
 
 // if restartQuiz button clicked
 restart_quiz.onclick = () => {
     //window.alert(activeResult.scoreText);
-
-
     //result_box.classList.add("activeResult"); //show result box
     //const scoreText = result_box.querySelector(".score_text");
-
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 100;
@@ -66,12 +64,24 @@ restart_quiz.onclick = () => {
     //startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
-}
+};
 
-//if Save Score button is clicked
-save_score.onclick = () => {
-    window.alert("Save Score Here");
-}
+
+///////////////////////////////////////////
+
+save_quiz.onclick = () => {
+    window.alert("Save Score function");
+
+
+    
+    //result_box.classList.add("activeResult"); 
+    //show result box
+    //const scoreText = result_box.querySelector(".score_text");
+
+};
+
+
+/////////////////////////////////////////////////
 
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {
