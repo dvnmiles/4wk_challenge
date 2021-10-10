@@ -60,8 +60,6 @@ let questions = [
       "Answer 5",
     ]
   },
-
-  
   {
     numb: "DOUBLE BONUS QUESTION: ",
     question: "In a fight to the death, which fictional AI / Robotic character and personality would win?",
@@ -74,5 +72,4 @@ let questions = [
       "Trimaxion Drone Ship from Flight of the Navigator",
     ]
   },
-
 ];

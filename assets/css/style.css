@@ -21,8 +21,8 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px 0 lightcoral (0, 0, 0, 0.2), 
-                0 6px 20px 0 lime (0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 red (0, 0, 0, 0.2), 
+                0 6px 20px 0 royalblue (0, 0, 0, 0.19);
 }
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
@@ -55,7 +55,7 @@ body{
 .info_box .info-title{
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid aliceblue;
     display: flex;
     align-items: center;
     padding: 0 30px;
@@ -80,7 +80,7 @@ body{
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid aliceblue;
 }
 .info_box .buttons button{
     margin: 0 5px;
@@ -97,7 +97,7 @@ body{
 }
 .quiz_box{
     width: 550px;
-    background: skyblue;
+    background: aliceblue;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -121,9 +121,9 @@ body{
     font-weight: 600;
 }
 .quiz_box header .timer{
-    color: #ff4dd8;
-    background: #abff92;
-    border: 1px solid #15ff00;
+    color: red;
+    background: aliceblue;
+    border: 1px solid royalblue;
     height: 45px;
     padding: 0 8px;
     border-radius: 5px;
@@ -133,7 +133,7 @@ body{
     width: 145px;
 }
 .quiz_box header .timer .time_left_txt{
-    font-weight: 400;
+    font-weight: 200;
     font-size: 17px;
     user-select: none;
 }
@@ -186,19 +186,19 @@ section .option_list .option:last-child{
     margin-bottom: 0px;
 }
 section .option_list .option:hover{
-    color: indigo;
-    background: red;
-    border: 1px solid #b8daff;
+    color: royalblue;
+    background: aliceblue;
+    border: 1px solid black;
 }
 section .option_list .option.correct{
-    color: greenyellow;
-    background: white;
-    border: 1px solid purple;
+    color: lightgreen;
+    background: #fff;
+    border: 1px solid green;
 }
 section .option_list .option.incorrect{
-    color: fuchsia;
-    background: #000000;
-    border: 1px solid #f5c6cb;
+    color: lightpink;
+    background: #fff;
+    border: 1px solid red;
 }
 section .option_list .option.disabled{
     pointer-events: none;
@@ -215,14 +215,14 @@ section .option_list .option .icon{
     line-height: 24px;
 }
 .option_list .option .icon.tick{
-    color: brown;
-    border-color: #23903c;
-    background: #d4edda;
+    color: lightgreen;
+    background: #fff;
+    border-color: green;
 }
 .option_list .option .icon.cross{
-    color: yellow;
-    background: #f8d7da;
-    border-color: #a42834;
+    color: lightpink;
+    border-color: red;
+    background: #fff;
 }
 footer{
     height: 60px;

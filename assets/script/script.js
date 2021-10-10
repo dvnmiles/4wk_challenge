@@ -44,12 +44,8 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 const save_quiz = result_box.querySelector(".buttons .save");
 
-
 // if restartQuiz button clicked
 restart_quiz.onclick = () => {
-    //window.alert(activeResult.scoreText);
-    //result_box.classList.add("activeResult"); //show result box
-    //const scoreText = result_box.querySelector(".score_text");
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 100;
@@ -62,28 +58,25 @@ restart_quiz.onclick = () => {
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     startTimer(timeValue); //calling startTimer function
-    //startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
 };
-
-
-///////////////////////////////////////////
-
+/////////////////////////////////////////////////////////////////////////////////////
+//////////Is this saving???? if it is where????
 save_quiz.onclick = () => {
-    //window.alert("Save Score function");
-    var saveIt = window.confirm("Press OK to save your score to the console storage.");
-    if (saveIt) {
-        window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to the console storage.");
-        //window.alert("Thank you for playing! Come back soon!");
-        //window.location.reload(); //reload the current window
-    }
-    else {
-        window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to the local storage.");
-       // window.alert("Thank you for playing! Come back soon!");
-    }
+     //window.alert("Save Score function");
+     var saveIt = window.confirm("Press OK to save your score to storage.");
+     if (saveIt) {
+         window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to storage.");
+         localStorage.setItem("initials", playerInfo.initials);
+         localStorage.setItem("score", userScore);
+     }
+     else {
+        window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to storage.");
+        localStorage.setItem("initials", playerInfo.initials);
+        localStorage.setItem("score", userScore);
+     }
 };
-/////////////////////////////////////////////////
 
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {
@@ -109,15 +102,12 @@ next_btn.onclick = () => {
     }
 }
 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // getting questions and options from JS
 function showQuetions(index) {
     const que_text = document.querySelector(".que_text");
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>' + questions[index].numb + ". " + questions[index].question + '</span>';
-    
+
     ///answer selections: add additional divspans as additional answeres are created, NOTE: this is not variable!!! all Qs should have same # of answers.
     let option_tag = '<div class="option"><span>' + questions[index].options[0] + '</span></div>'
         + '<div class="option"><span>' + questions[index].options[1] + '</span></div>'
@@ -133,10 +123,6 @@ function showQuetions(index) {
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -153,6 +139,8 @@ function optionSelected(answer) {
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
+        let feedbackCorrect = '<span><p>' + userScore + '</p> correct out of <p>' + questions.length + '</p> questions.</span>';
+        bottom_ques_counter.innerHTML = feedbackCorrect;  //adding new span tag inside bottom_ques_counter
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
         clearInterval(counter); //clear counter
@@ -162,10 +150,10 @@ function optionSelected(answer) {
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Wrong Answer");
+        let feedbackCorrect = '<span><p>' + userScore + '</p> correct out of <p>' + questions.length + '</p> questions.</span>';
+        bottom_ques_counter.innerHTML = feedbackCorrect;  //adding new span tag inside bottom_ques_counter
         clearInterval(counter); //clear counter
         timePenalty(); //calling timePenalty function
-        //suspendTime(timeValue); //calling suspendTime function
-
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
 
@@ -196,13 +184,11 @@ function showResult() {
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
         localStorage.setItem("initials", playerInfo.initials);
         localStorage.setItem("score", userScore);
-       // alert(playerInfo.initials + " got " + userScore + " questions correct.");
     }
     else {
         alert(playerInfo.initials + " now has the high score of " + userScore + "!");
     }
 };
-
 
 //START TIMER 
 function startTimer(time) {
@@ -210,7 +196,8 @@ function startTimer(time) {
     function timer() {
         timeCount.textContent = time; //changing the value of timeCount with time value
         time--; //decrement the time value
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////Not Working. need to trouble shoot.
         if (time < 9) { //if timer is less than 9
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero; //add a 0 before time value
@@ -222,7 +209,9 @@ function startTimer(time) {
 
             clearInterval(counter); //clear counter
             timeText.textContent = "You ran out of time."; //change the time text to time off
-            let timeValue = 0;
+            //////////////////////
+            timer_sec = 0;
+            /////////////////////
             const allOptions = option_list.children.length; //getting all option items
             let correcAns = questions[que_count].answer; //getting correct answer from array
             for (i = 0; i < allOptions; i++) {
@@ -238,6 +227,7 @@ function startTimer(time) {
             next_btn.classList.add("show"); //show the next button if user selected any option
         }
     }
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 };
 // Timer function when answer question button clicked
 
