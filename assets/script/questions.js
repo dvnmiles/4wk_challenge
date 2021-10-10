@@ -61,15 +61,18 @@ let questions = [
     ]
   },
 
+  
   {
-    numb: "BONUS QUESTION: ",
-    question: "In the TV series Knight Rider, what programming language was used to program the autonomous vehicle?",
-    answer: "KITT",
+    numb: "DOUBLE BONUS QUESTION: ",
+    question: "In a fight to the death, which fictional AI / Robotic character and personality would win?",
+    answer: "Trimaxion Drone Ship from Flight of the Navigator",
     options: [
-      "C++",
-      "Ada.",
-      "KITT",
-      "Eiffel"
+      "KITT from Knigth Rider",
+      "HAL 9000 from 2001: A Space Oddyssey",
+      "ROBO-COP",
+      "Number 5 from Short Circut",
+      "Trimaxion Drone Ship from Flight of the Navigator",
     ]
   },
+
 ];

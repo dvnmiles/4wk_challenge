@@ -4,10 +4,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
-    background: gray;
+    background: rgb(70, 70, 70);
 }
 ::selection{
     color: #fff;
@@ -21,13 +21,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 lightcoral (0, 0, 0, 0.2), 
+                0 6px 20px 0 lime (0, 0, 0, 0.19);
 }
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult{
-    opacity: 1;
+    opacity: 7;
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
@@ -35,7 +35,7 @@ body{
 .start_btn button{
     font-size: 25px;
     font-weight: 500;
-    color: #gray;
+    color: gray;
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -75,7 +75,7 @@ body{
     color: gray;
 }
 .info_box .buttons{
-    height: 75px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -84,7 +84,7 @@ body{
 }
 .info_box .buttons button{
     margin: 0 5px;
-    height: 75px;
+    height: 45px;
     width: 100px;
     font-size: 16px;
     font-weight: 500;
@@ -97,7 +97,7 @@ body{
 }
 .quiz_box{
     width: 550px;
-    background: #fff;
+    background: skyblue;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -109,7 +109,7 @@ body{
     z-index: 2;
     height: 70px;
     padding: 0 30px;
-    background: #fff;
+    background: skyblue;
     border-radius: 5px 5px 0 0;
     display: flex;
     align-items: center;
@@ -121,9 +121,9 @@ body{
     font-weight: 600;
 }
 .quiz_box header .timer{
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
+    color: #ff4dd8;
+    background: #abff92;
+    border: 1px solid #15ff00;
     height: 45px;
     padding: 0 8px;
     border-radius: 5px;
@@ -167,7 +167,7 @@ section .que_text{
 }
 section .option_list{
     padding: 20px 0px;
-    display: block;   
+    display: block;  
 }
 section .option_list .option{
     background: aliceblue;
@@ -186,18 +186,18 @@ section .option_list .option:last-child{
     margin-bottom: 0px;
 }
 section .option_list .option:hover{
-    color: #004085;
-    background: #cce5ff;
+    color: indigo;
+    background: red;
     border: 1px solid #b8daff;
 }
 section .option_list .option.correct{
-    color: #155724;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: greenyellow;
+    background: white;
+    border: 1px solid purple;
 }
 section .option_list .option.incorrect{
-    color: #721c24;
-    background: #f8d7da;
+    color: fuchsia;
+    background: #000000;
     border: 1px solid #f5c6cb;
 }
 section .option_list .option.disabled{
@@ -215,12 +215,12 @@ section .option_list .option .icon{
     line-height: 24px;
 }
 .option_list .option .icon.tick{
-    color: #23903c;
+    color: brown;
     border-color: #23903c;
     background: #d4edda;
 }
 .option_list .option .icon.cross{
-    color: #a42834;
+    color: yellow;
     background: #f8d7da;
     border-color: #a42834;
 }
@@ -244,7 +244,7 @@ footer .total_que span p:first-child{
     padding-left: 0px;
 }
 footer button{
-    height: 40px;
+    height: 60px;
     padding: 0 13px;
     font-size: 18px;
     font-weight: 400;
@@ -308,7 +308,7 @@ footer button.show{
 }
 .result_box .buttons button{
     margin: 0 10px;
-    height: 75px;
+    height: 60px;
     padding: 0 20px;
     font-size: 18px;
     font-weight: 500;
