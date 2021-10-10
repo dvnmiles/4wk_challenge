@@ -7,11 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: #007bff;
+    background: gray;
 }
 ::selection{
     color: #fff;
-    background: #007bff;
+    background: gray;
 }
 .start_btn,
 .info_box,
@@ -35,7 +35,7 @@ body{
 .start_btn button{
     font-size: 25px;
     font-weight: 500;
-    color: #007bff;
+    color: #gray;
     padding: 15px 30px;
     outline: none;
     border: none;
@@ -72,10 +72,10 @@ body{
 }
 .info_box .info-list .info span{
     font-weight: 600;
-    color: #007bff;
+    color: gray;
 }
 .info_box .buttons{
-    height: 60px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -84,7 +84,7 @@ body{
 }
 .info_box .buttons button{
     margin: 0 5px;
-    height: 40px;
+    height: 75px;
     width: 100px;
     font-size: 16px;
     font-weight: 500;
@@ -92,7 +92,7 @@ body{
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid gray;
     transition: all 0.3s ease;
 }
 .quiz_box{
@@ -155,7 +155,7 @@ body{
     bottom: 0px;
     left: 0px;
     height: 3px;
-    background: #007bff;
+    background: gray;
 }
 section{
     padding: 25px 30px 20px 30px;
@@ -253,8 +253,8 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #007bff;
-    border: 1px solid #007bff;
+    background: gray;
+    border: 1px solid gray;
     line-height: 10px;
     opacity: 0;
     pointer-events: none;
@@ -285,7 +285,7 @@ footer button.show{
 }
 .result_box .icon{
     font-size: 100px;
-    color: #007bff;
+    color: gray;
     margin-bottom: 10px;
 }
 .result_box .complete_text{
@@ -308,7 +308,7 @@ footer button.show{
 }
 .result_box .buttons button{
     margin: 0 10px;
-    height: 45px;
+    height: 75px;
     padding: 0 20px;
     font-size: 18px;
     font-weight: 500;
@@ -316,32 +316,32 @@ footer button.show{
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #007bff;
+    border: 1px solid gray;
     transition: all 0.3s ease;
 }
 
 .buttons button.save {
     color: #fff;
-    background: #007bff;
+    background: gray;
 }
 
 .buttons button.save:hover {
-    color: #007bff;
+    color: gray;
     background: #fff;
 }
 
 .buttons button.restart{
     color: #fff;
-    background: #007bff;
+    background: gray;
 }
 .buttons button.restart:hover{
     background: #0263ca;
 }
 .buttons button.quit{
-    color: #007bff;
+    color: gray;
     background: #fff;
 }
 .buttons button.quit:hover{
     color: #fff;
-    background: #007bff;
+    background: gray;
 }

@@ -10,5 +10,5 @@
     c. When incorrect answer clicked, a block of 10 seconds are deducted from the current value of timer that is counting down
 4. Quiz Complete
     a. If user either answers all the questions OR the time reaches 0 the game will end.
-    b. user will be presented with the % of questions that they answered correctly in the time alloted.
-    c. user will be presented with a dialog box that allows them to enter their score and initials.
+    b. user will be presented with the nunber of questions that they answered correctly in the time alloted.
+    c. user will be presented with option to save their score to the console storgae. S

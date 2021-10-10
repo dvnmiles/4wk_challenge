@@ -8,7 +8,7 @@ let questions = [
       "Answer 2",
       "Answer 3",
       "Answer 4",
-      "Answer 5"
+      "Answer 5",
     ]
   },
   {
@@ -20,7 +20,7 @@ let questions = [
       "Answer 2",
       "Answer 3",
       "Answer 4",
-      "Answer 5"
+      "Answer 5",
     ]
   },
   {
@@ -32,7 +32,7 @@ let questions = [
       "Answer 2",
       "Answer 3",
       "Answer 4",
-      "Answer 5"
+      "Answer 5",
     ]
   },
   {
@@ -44,25 +44,25 @@ let questions = [
       "Answer 2",
       "Answer 3",
       "Answer 4",
-      "Answer 5"
+      "Answer 5",
     ]
   },
 
   {
     numb: 5,
     question: "Question Five",
-    answer: "Answer 4",
+    answer: "Answer 5",
     options: [
       "Answer 1",
       "Answer 2",
       "Answer 3",
       "Answer 4",
-      "Answer 5"
+      "Answer 5",
     ]
   },
 
   {
-    numb: 6,
+    numb: "BONUS QUESTION: ",
     question: "In the TV series Knight Rider, what programming language was used to program the autonomous vehicle?",
     answer: "KITT",
     options: [

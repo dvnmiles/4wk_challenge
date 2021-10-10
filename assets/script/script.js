@@ -72,14 +72,15 @@ restart_quiz.onclick = () => {
 
 save_quiz.onclick = () => {
     //window.alert("Save Score function");
-    var saveIt = window.confirm("Press OK to save your score?");
+    var saveIt = window.confirm("Press OK to save your score to the console storage.");
     if (saveIt) {
-        window.alert("Thank you" + playerInfo.initials + "your score of" + userScore + "has been saved to the local storage.");
-        window.location.reload(); //reload the current window
+        window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to the console storage.");
+        //window.alert("Thank you for playing! Come back soon!");
+        //window.location.reload(); //reload the current window
     }
     else {
-        window.alert("Thank you" + playerInfo.initials + "your score of" + userScore + "has been saved to the local storage.");
-        window.alert("Thank you for playing! Come back soon!");
+        window.alert("Thank you player who identified self with the initials " + playerInfo.initials + " your score of " + userScore + " has been saved to the local storage.");
+       // window.alert("Thank you for playing! Come back soon!");
     }
 };
 /////////////////////////////////////////////////
@@ -185,7 +186,7 @@ function showResult() {
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
         localStorage.setItem("initials", playerInfo.initials);
         localStorage.setItem("score", userScore);
-        alert(playerInfo.initials + " got" + userScore + "questions correct.");
+       // alert(playerInfo.initials + " got " + userScore + " questions correct.");
     }
     else {
         alert(playerInfo.initials + " now has the high score of " + userScore + "!");
@@ -293,9 +294,9 @@ var setInitials = function () {
     var initials = "";
 
     while (initials === "" || initials === null) {
-        initials = prompt("Please enter your initials.");
+        initials = prompt("Welcome to the Javascript Fundamentals quiz. To get started, please enter your initials and click OK.");
     }
-    console.log("Your initials are recorded as" + initials);
+    console.log("Your initials are recorded as " + initials);
     return initials;
 };
 
